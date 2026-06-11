@@ -1,0 +1,410 @@
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Rotação suave ao clicar no menu */
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   TOPO (HEADER)
+   ========================================================================== */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #00ff88;
+}
+
+.logo-horta {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00ff88;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00ff88;
+    animation: brilho 3s infinite;
+}
+
+header p {
+    margin-top: 10px;
+    color: #b8ffda;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   NAVEGAÇÃO (MENU)
+   ========================================================================== */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #07120c;
+    border-bottom: 1px solid #00ff88;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #00ff88;
+    color: black;
+    box-shadow: 0 0 15px #00ff88;
+}
+
+/* ==========================================================================
+   ESTILOS DE SEÇÕES GERAIS
+   ========================================================================== */
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.2);
+}
+
+section h2 {
+    margin-bottom: 20px;
+    color: #00ff88;
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+    padding-bottom: 8px;
+}
+
+section p {
+    color: #d7ffe8;
+    font-size: 1.05rem;
+}
+
+/* Imagens padrões de seções */
+section img {
+    display: block;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 2px solid #00ff88;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+/* ==========================================================================
+   CONTEÚDO DA SEÇÃO NOSSA HORTA
+   ========================================================================== */
+.galeria-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.galeria-grid img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   CONTEÚDO DA SEÇÃO ALUNOS
+   ========================================================================== */
+.alunos-imagem-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.alunos-imagem-container img {
+    width: 450px;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   CONTEÚDO DO MINI TUTORIAL
+   ========================================================================== */
+.intro-tutorial {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.passos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.passo-card {
+    background: #252525;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.passo-card:hover {
+    border-color: #00ff88;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+.passo-numero {
+    background: #00ff88;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px auto;
+    box-shadow: 0 0 8px #00ff88;
+}
+
+.passo-card h3 {
+    color: #00ff88;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.passo-card p {
+    font-size: 0.9rem;
+    color: #b3d9c2;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   SLIDER / CARROSSEL DE FOTOS
+   ========================================================================== */
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #00ff88;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slider-controls {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    background: #00ff88;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: white;
+}
+
+/* ==========================================================================
+   RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #050816;
+    border-top: 1px solid #00ff88;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   ANIMAÇÕES E RESPONSIVIDADE
+   ========================================================================== */
+@keyframes brilho {
+    0%, 100% { text-shadow: 0 0 10px #00ff88; }
+    50% { text-shadow: 0 0 25px #00ff88, 0 0 40px #00ff88; }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        padding: 12px;
+    }
+
+    section {
+        width: 92%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .galeria-grid img, 
+    .alunos-imagem-container img, 
+    .slider {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+    }
+}
+/* ==========================================================================
+   CONTEÚDO DA SEÇÃO CULTIVOS (TABELA)
+   ========================================================================== */
+.intro-tabela {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto; /* Permite rolar para o lado no celular se a tela for pequena */
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background: #151515;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #252525;
+}
+
+th {
+    background-color: #07120c;
+    color: #00ff88;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #00ff88;
+}
+
+tr:hover {
+    background-color: rgba(0, 255, 136, 0.05); /* Efeito luminoso ao passar o mouse na linha */
+}
+
+.planta-nome {
+    color: #00ff88;
+}
+
+/* Ajuste fino para telas menores */
+@media (max-width: 600px) {
+    th, td {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+}
+/* ==========================================================================
+   BOTÃO FLUTUANTE (VOLTAR AO TOPO)
+   ========================================================================== */
+#btn-topo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    background-color: #00ff88;
+    color: black;
+    border: none;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00ff88;
+    
+    /* Inicialmente escondido (controlado pelo JS) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    
+    /* Transição suave para aparecer e sumir */
+    transition: all 0.3s ease-in-out;
+    margin-top: 0; /* Reseta a margem padrão dos outros botões */
+    padding: 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn-topo:hover {
+    background-color: white;
+    transform: scale(1.1) translateY(0);
+    box-shadow: 0 0 20px #ffffff;
+}
+
